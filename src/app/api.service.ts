@@ -12,9 +12,6 @@ export class ApiService {
 
   querys = [];
 
-  //server = 'http://vayon-portal-monitoracao-baleia-v2-api.onibusiness.com.br';
-  //server = 'http://localhost:8082';
-  //server = 'https://supermarketcrud.herokuapp.com';
   server = 'https://supermarketcrud.herokuapp.com';
 
   listaSupermarkets(): Observable<any[]> {
