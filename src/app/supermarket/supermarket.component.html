@@ -1,0 +1,48 @@
+<div class="example-container">
+  <input placeholder="Name" type="text" [(ngModel)]="superMarketName" id="superMarketName" required><br/>
+  <input placeholder="Image" type="file" [(ngModel)]="superMarketMainImage" id="superMarketMainImage" required><br/>
+  <input placeholder="AdditionalImages" type="file" [(ngModel)]="superMarketAdditionalImages" id="superMarketAdditionalImages" multiple><br/>
+  <input placeholder="Street" type="text" [(ngModel)]="street" id="street" required><br/>
+  <input placeholder="Number" type="text" [(ngModel)]="number" id="number" required><br/>
+  <input placeholder="District" type="text" [(ngModel)]="district" id="district" required><br/>
+  <input placeholder="ZIP" type="text" [(ngModel)]="zip" id="zip" required><br/>
+  <input placeholder="Country" type="text" [(ngModel)]="country" id="country" required><br/>
+  <input placeholder="City" type="text" [(ngModel)]="city" id="city" required><br/>
+  <input placeholder="State" type="text" [(ngModel)]="state" id="state" required><br/>
+  <input matInput placeholder="Description" type="text" [(ngModel)]="superMarketDescription" id="superMarketDescription" required><br/>
+  <input matInput placeholder="Phone" type="number" [(ngModel)]="superMarketPhone" id="superMarketPhone" required><br/>
+  <button class="btn btn-primary" style="margin-bottom: 25px;" (click)="saveSupermarket()">Salvar</button>
+</div>
+<br/>
+<div>
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Imagem principal</th>
+      <th>Imagens adicionais</th>
+      <th>Rua</th>
+      <th>Número</th>
+      <th>Estado</th>
+      <th>Distrito</th>
+      <th>CEP</th>
+      <th>Descrição</th>
+      <th>Telefone</th>
+      <th>&nbsp;</th>
+    </tr>
+    <tr *ngFor="let item of supermarkets; let i = index">
+      <td>{{item.superMarketName}}</td>
+      <td>{{item.superMarketMainImage}}</td>
+      <td>{{item.superMarketAdditionalImages}}</td>
+      <td>{{item.locationStreet}}</td>
+      <td>{{item.locationNumber}}</td>
+      <td>{{item.locationState}}</td>
+      <td>{{item.locationDistrict}}</td>
+      <td>{{item.locationZip}}</td>
+      <td>{{item.superMarketDescription}}</td>
+      <td>{{item.superMarketPhone}}</td>
+      <td>
+        <img src="../../assets/editar.png" title="Editar" (click)="editar(item)">
+        <img src="../../assets/excluir.png" title="Excluir" (click)="excluir(item)">
+      </td>
+    </tr>
+  </table>
